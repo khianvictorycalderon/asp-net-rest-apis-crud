@@ -1,3 +1,4 @@
+namespace asp_net_rest_apis_crud.Models;
 using Microsoft.AspNetCore.Mvc;
 
 public class User
