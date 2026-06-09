@@ -2,7 +2,7 @@ namespace asp_net_rest_apis_crud.Models;
 
 public class User
 {
-    public Guid id { get; set; }
+    public Guid Id { get; set; }
     
     public string FirstName { get; set; } = null!;
 

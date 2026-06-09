@@ -49,8 +49,7 @@ None
       "firstName": "John",
       "lastName": "Doe",
       "middleName": "M",
-      "birthDate": "2000-01-01",
-      "age": 24
+      "birthDate": "2000-01-01"
     }
   ]
 }
@@ -74,12 +73,9 @@ uid (integer) - required
   "firstName": "John",
   "lastName": "Doe",
   "middleName": "M",
-  "birthDate": "2000-01-01",
-  "age": 24
+  "birthDate": "2000-01-01"
 }
 ```
-
-> Age is computed from birthDate.
 
 ---
 
