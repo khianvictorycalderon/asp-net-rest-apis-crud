@@ -2,6 +2,7 @@ namespace asp_net_rest_apis_crud.Services;
 
 using asp_net_rest_apis_crud.Data;
 using asp_net_rest_apis_crud.DTOs;
+using asp_net_rest_apis_crud.Models;
 using asp_net_rest_apis_crud.Services;
 
 public class UserService : IUserService
