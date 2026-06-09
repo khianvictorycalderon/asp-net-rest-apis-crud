@@ -26,4 +26,12 @@ public static class CorsExtension
 
         return services;
     }
+
+    public static IApplicationBuilder UseApiCors(
+        this IApplicationBuilder app
+    )
+    {
+        var application = app.UseCors(PolicyName);
+        return application;
+    }
 }
