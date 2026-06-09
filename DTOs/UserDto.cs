@@ -31,3 +31,8 @@ public class GetAllUsersResponseDto
     public List<GetUserResponseDto> Users { get; set; } = [];
 
 }
+
+public class MessageResponseDto
+{
+    public string message { get; set; } = null!;
+}
