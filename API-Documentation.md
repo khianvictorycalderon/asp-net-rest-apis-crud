@@ -7,7 +7,7 @@
 
 ---
 
-## 📌 Create User
+## Create User
 
 ### `POST /api/users`
 
@@ -30,7 +30,7 @@
 
 ---
 
-## 📌 Get All Users
+## Get All Users
 
 ### `GET /api/users`
 
@@ -58,7 +58,7 @@ None
 
 ---
 
-## 📌 Get User by ID
+## Get User by ID
 
 ### `GET /api/users/{uid}`
 
@@ -83,7 +83,7 @@ uid (integer) - required
 
 ---
 
-## 📌 Update User
+## Update User
 
 ### `PUT /api/users/{uid}`
 
@@ -111,7 +111,7 @@ uid (integer) - required
 
 ---
 
-## 📌 Delete User
+## Delete User
 
 ### `DELETE /api/users/{uid}`
 
@@ -129,7 +129,7 @@ uid (integer) - required
 
 ---
 
-## ⚠️ Error Response Format
+## Error Response Format
 
 ```json
 {
