@@ -31,9 +31,7 @@ public class UsersController : ControllerBase
         var result = await _userService.GetAllUsers();
         
         if (result.Users == null || result.Users.Count == 0)
-        {
             return NotFound(result);
-        }
 
         return Ok(result);
     }
@@ -43,10 +41,8 @@ public class UsersController : ControllerBase
     {
         var result = await _userService.GetUser(id);
 
-        if (result == null)
-        {
+        if (result.Users == null)
             return NotFound(result);
-        }
 
         return Ok(result);
     }
@@ -56,10 +52,8 @@ public class UsersController : ControllerBase
     {
         var result = await _userService.UpdateUser(id, dto);
 
-        if (result == null)
-        {
+        if (result.Message.Contains("No user"))
             return NotFound(result);
-        }
 
         return Ok(result);
     }
@@ -69,10 +63,8 @@ public class UsersController : ControllerBase
     {
         var result = await _userService.DeleteUser(id);
 
-        if (result == null)
-        {
+        if (result.Message.Contains("No user"))
             return NotFound(result);
-        }
 
         return Ok(result);
     }
