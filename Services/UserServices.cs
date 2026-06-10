@@ -93,7 +93,29 @@ public class UserService : IUserService
 
     public async Task<UserResponseDto> UpdateUser(Guid id, UserDto dto)
     {
-        
+        var user = await _context.Users
+            .FirstOrDefaultAsync(u => u.Id == id);
+
+        if (user == null)
+        {
+            return new UserResponseDto
+            {
+              Message = "Update failed: No user with that ID!"  
+            };
+        }
+
+        // Update existing user
+        user.FirstName = dto.FirstName;
+        user.MiddleName = dto.MiddleName ?? "";
+        user.LastName = dto.LastName;
+        user.BirthDate = dto.BirthDate;
+
+        await _context.SaveChangesAsync();
+
+        return new UserResponseDto
+        {
+          Message = "User successfully updated!"  
+        };
     }
 
     public async Task<UserResponseDto> DeleteUser(Guid id)
