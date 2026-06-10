@@ -1,3 +1,5 @@
+using asp_net_rest_apis_crud.Services;
+using asp_net_rest_apis_crud.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace asp_net_rest_apis_crud.Controllers;
@@ -6,32 +8,42 @@ namespace asp_net_rest_apis_crud.Controllers;
 [Route("/api/[controller]")]
 public class UsersController : ControllerBase
 {
-    [HttpPost]
-    public IActionResult CreateUser()
+
+    private readonly IUserService _userService;
+    public UsersController (
+        IUserService userService
+    )
     {
-        return Ok();
+        _userService = userService;    
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateUser(UserDto dto)
+    {
+        var result = await _userService.CreateUser(dto);
+        return Ok(result);
     }
 
     [HttpGet]
-    public IActionResult GetAllUsers()
+    public async Task<IActionResult> GetAllUsers()
     {
         return Ok();
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetUser(Guid id)
+    public async Task<IActionResult> GetUser(Guid id)
     {
         return Ok();
     }
 
     [HttpPut("{id}")]
-    public IActionResult UpdateUser(Guid id)
+    public async Task<IActionResult> UpdateUser(Guid id)
     {
         return Ok();
     }
 
     [HttpDelete("{id}")]
-    public IActionResult DeleteUser(Guid id)
+    public async Task<IActionResult> DeleteUser(Guid id)
     {
         return Ok();
     }
