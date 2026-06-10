@@ -120,6 +120,23 @@ public class UserService : IUserService
 
     public async Task<UserResponseDto> DeleteUser(Guid id)
     {
-        
+        var user = await _context.Users
+            .FindAsync(id);
+
+        if (user == null)
+        {
+            return new UserResponseDto
+            {
+              Message = "Delete failed: No user with that ID!"  
+            };
+        }
+
+        _context.Users.Remove(user);
+        await _context.SaveChangesAsync();
+
+        return new UserResponseDto
+        {
+          Message = "User successfully deleted!"  
+        };
     }
 }
