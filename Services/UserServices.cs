@@ -91,12 +91,12 @@ public class UserService : IUserService
         };
     }
 
-    public async Task<MessageResponseDto> UpdateUser(Guid id, UserDto dto)
+    public async Task<UserResponseDto> UpdateUser(Guid id, UserDto dto)
     {
         
     }
 
-    public async Task<MessageResponseDto> DeleteUser(Guid id)
+    public async Task<UserResponseDto> DeleteUser(Guid id)
     {
         
     }
