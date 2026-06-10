@@ -1,6 +1,7 @@
 using asp_net_rest_apis_crud.Services;
 using asp_net_rest_apis_crud.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using System.Data.Common;
 
 namespace asp_net_rest_apis_crud.Controllers;
 
@@ -18,10 +19,10 @@ public class UsersController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateUser(UserDto dto)
+    public async Task<IActionResult> CreateUser([FromBody] UserDto dto)
     {
         var result = await _userService.CreateUser(dto);
-        return Ok(result);
+        return Created("", result);
     }
 
     [HttpGet]
