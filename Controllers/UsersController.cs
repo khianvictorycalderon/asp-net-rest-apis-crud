@@ -41,7 +41,14 @@ public class UsersController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetUser(Guid id)
     {
-        return Ok();
+        var result = await _userService.GetUser(id);
+
+        if (result == null)
+        {
+            return NotFound(result);
+        }
+
+        return Ok(result);
     }
 
     [HttpPut("{id}")]
