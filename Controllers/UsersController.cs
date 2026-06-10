@@ -52,9 +52,16 @@ public class UsersController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateUser(Guid id)
+    public async Task<IActionResult> UpdateUser(Guid id, UserDto dto)
     {
-        return Ok();
+        var result = await _userService.UpdateUser(id, dto);
+
+        if (result == null)
+        {
+            return NotFound(result);
+        }
+
+        return Ok(result);
     }
 
     [HttpDelete("{id}")]
