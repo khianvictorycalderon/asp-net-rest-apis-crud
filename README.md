@@ -8,13 +8,11 @@
     dotnet tool install --global dotnet-ef --version 8.0.0
     ```
     *NOTE: Latest version is unstable with the current setup so I use 8.0.0*
-3. Run the following CMD comamnds:
+3. Run the following command for database migration:
     ```
-    dotnet ef migrations add InitialCreate
     dotnet ef database update
     ```
-4. Run `dotnet clean` to clean unnecessary things.
-5. Run `dotnet watch run` to run your backend.
+4. Run `dotnet watch run` to run your backend.
 
 ---
 
