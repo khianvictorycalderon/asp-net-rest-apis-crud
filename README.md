@@ -3,7 +3,7 @@
 
 ## After cloning this repository:
 1. Update the `appsettings.Development.json` depending on your frontend origin *(The `"Cors": { "AllowedOrigins": [] }` part)*.
-2. Run this if you haven't installed it before:
+2. Run this if you haven't installed entity framework yet:
     ```cmd
     dotnet tool install --global dotnet-ef --version 8.0.0
     ```
